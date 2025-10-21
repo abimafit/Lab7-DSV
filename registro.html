@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Feria Académica 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Universidad Tecnológica</h1>
+                <p>Feria Académica 2025</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="programas.html">Programas</a></li>
+                    <li><a href="horarios.html">Horarios</a></li>
+                    <li><a href="registro.html" class="active">Registro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Registro para la Feria Académica</h1>
+                <p>Completa el formulario para asegurar tu participación</p>
+            </div>
+        </section>
+
+        <section class="registration">
+            <div class="container">
+                <div class="registration-form">
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono de contacto</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="edad">Edad</label>
+                            <input type="number" id="edad" name="edad" min="16" max="60">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interes">Programa de interés principal *</label>
+                            <select id="interes" name="interes" required>
+                                <option value="">Selecciona un programa</option>
+                                <option value="sistemas">Ingeniería en Sistemas</option>
+                                <option value="administracion">Administración de Empresas</option>
+                                <option value="diseno">Diseño Gráfico</option>
+                                <option value="psicologia">Psicología</option>
+                                <option value="medicina">Medicina</option>
+                                <option value="derecho">Derecho</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Días de asistencia *</label>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="dias" value="lunes">
+                                    Lunes 15 de noviembre
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="dias" value="martes">
+                                    Martes 16 de noviembre
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="dias" value="miercoles">
+                                    Miércoles 17 de noviembre
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comentarios">Comentarios o preguntas</label>
+                            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn">Enviar registro</button>
+                        </div>
+                    </form>
+                    
+                    <div class="registration-info">
+                        <h3>Información importante</h3>
+                        <ul>
+                            <li>Recibirás un correo de confirmación en 24 horas</li>
+                            <li>Presenta tu identificación al ingresar al evento</li>
+                            <li>Puedes asistir a todas las charlas que desees</li>
+                            <li>Habrá guías disponibles para orientarte</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Teléfono: (123) 456-7890</p>
+                    <p>Email: feria2025@universidad.edu</p>
+                    <p>Dirección: Av. Universitaria 123</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="programas.html">Programas</a></li>
+                        <li><a href="horarios.html">Horarios</a></li>
+                        <li><a href="registro.html">Registro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Universidad Tecnológica. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Validación básica del formulario
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar que al menos un día esté seleccionado
+            const diasSeleccionados = document.querySelectorAll('input[name="dias"]:checked');
+            if (diasSeleccionados.length === 0) {
+                alert('Por favor, selecciona al menos un día de asistencia.');
+                return;
+            }
+            
+            // Si pasa la validación, mostrar mensaje de éxito
+            alert('¡Registro enviado con éxito! Recibirás un correo de confirmación pronto.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
